@@ -1,0 +1,171 @@
+.all{
+    min-height: 100vh;
+}
+
+.all .title{
+    padding-bottom: 10px;
+    border-bottom: 3px solid rgb(12,247,0);
+    width: 100%;
+    text-transform: capitalize;
+    color: #fff;
+    font-size: 18px;
+    padding-top: 70px;
+}
+
+.all .products{
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    grid-auto-flow: row;
+}
+.all .products .product.plus{
+    cursor: pointer;
+    display: grid;
+    place-items: center;
+}
+.all .products .product.plus i{
+    font-size: 100px;
+    color: rgb(12,247,0);
+}
+
+.all .products .product{
+    position: relative;
+    width: 200px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.all .products .product .product_img{
+    width: 90%;
+    height: 200px;
+    object-fit: contain;
+}
+
+.all .products .product .details{
+    display: flex;
+    flex-direction: column-reverse;
+    height: 90px;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+
+}
+.all .products .product .details span{
+    font-size: 25px;
+}
+.all .products .product .details .product_price{
+    font-size: 20px;    
+}
+
+.all .products .product .details .product_name{
+    font-size: 16px;
+    text-transform: capitalize;
+    font-weight: 500;
+}
+.all .products .product i{
+    position: absolute;
+    font-size: 30px;
+    color: red;
+    top: 10px;
+    right: 30px;
+    cursor: pointer;
+}
+.all .add{
+    position: absolute;
+    transform: translateX(-100%);
+    opacity: 0;
+    transition: .5s ease-in-out;
+}
+
+.all .add.toggle{
+    position: absolute;
+    left: 0;
+    width: 500px;
+    height: 82vh;
+    background-color: #fff;
+    display: grid;
+    place-items: center;
+    transform: translateX(0);
+    opacity: 1;
+    z-index: 15;
+}
+
+.all .add form{
+    display: flex;
+    flex-direction: column;
+}
+
+.all .add form input{
+    height: 40px;
+    width: 400px;
+    margin-block: 10px;
+}
+
+.close{
+    position: absolute;
+    right: 30px;
+    font-size: 30px;
+    top: 30px;
+    cursor: pointer;
+    color: red;
+}
+
+#info{
+    position: relative;
+    width: 100%;
+    left: 30%;
+}
+
+#info.error{
+    color: red;
+}
+
+#info.succes{
+    color: green;
+}
+
+.update{
+    position: absolute;
+    visibility: hidden;
+    z-index: 18;
+    bottom: -80%;
+    left: 50%;
+    width: 700px;
+    height: 400px;
+    background-color: #fff;
+    border-radius: 10px;
+    transform: translate(-50%,0%);
+    display: grid;
+    place-items: center;
+}
+
+.update.toggle{
+    visibility: visible;
+}
+
+.update fieldset{
+    width: 90%;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.update fieldset form{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.update fieldset form input {
+    margin: 10px;
+    height: 30px;
+}
+
+.update fieldset #usubmit{
+    width: 60%;
+    height: 50px;
+    cursor: pointer;
+
+
+}
