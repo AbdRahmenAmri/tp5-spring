@@ -162,10 +162,15 @@
     height: 30px;
 }
 
-.update fieldset #usubmit{
+#usubmit,#udel{
     width: 60%;
     height: 50px;
     cursor: pointer;
 
 
+}
+
+#udel{
+    color: #fff;
+    background-color: red;
 }

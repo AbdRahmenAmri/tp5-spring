@@ -14,7 +14,6 @@ function Products() {
         return(
             <>
             <div className="product" data-id={product.id} key={product.id} onClick={updateOpen} >
-            <i className="fa-solid fa-ban" onClick={deleteProduct}></i>
               <img className='product_img' src={img} alt=''/>
               <div className="details">
               
@@ -47,13 +46,14 @@ function Products() {
 
 
     const deleteProduct = (e)=>{
-        let id = e.target.parentElement.getAttribute("data-id");
+        let id = uid.current.value;
         if(!isNaN(id)){
             axios({
                 method: 'delete',
                 url: `${baseURL+id}`,
               }).then(res => {
                   if(res.status === 200){
+                      updateClose()
                       $(e.target.parentElement).fadeOut();
                   }
             })
@@ -190,6 +190,8 @@ function Products() {
 
     }
 
+    const delP = useRef();
+
 
   return (
     <div className='all'>
@@ -210,6 +212,7 @@ function Products() {
                     <input type="file" id='img' accept=".png,.jpg,.jpeg,.webp" ref={ui}/>
                 </form>
                 <input type="button" id='usubmit' ref={add} onClick={updateClick} value='submit' />
+                <input type="button" id='udel' ref={delP} onClick={deleteProduct} value='DELETE' />
             </fieldset>
         </div>
 
