@@ -54,7 +54,7 @@ function Products() {
               }).then(res => {
                   if(res.status === 200){
                       updateClose()
-                      $(e.target.parentElement).fadeOut();
+                      $(`[data-id=${id}]`).fadeOut();
                   }
             })
         }
